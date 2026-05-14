@@ -1,0 +1,541 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naip Hüseyin Anadolu Lisesi - Anasayfa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff6eb4;
+            --purple: #a855f7;
+            --blue: #3b82f6;
+            --teal: #14b8a6;
+            --yellow: #fbbf24;
+            --orange: #f97316;
+            --green: #22c55e;
+            --red: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg,
+                    #fff0fa 0%,
+                    #e0f2fe 25%,
+                    #fef9c3 50%,
+                    #dcfce7 75%,
+                    #fce7f3 100%);
+            background-size: 400% 400%;
+            animation: bgShift 12s ease infinite;
+            color: #1a1a2e;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ===== FLOWER DECORATIONS ===== */
+        .flowers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: floatFlower 6s ease-in-out infinite;
+            opacity: 0.55;
+            user-select: none;
+        }
+
+        /* top-left cluster */
+        .f1 {
+            top: 2%;
+            left: 1%;
+            font-size: 3.5rem;
+            animation-delay: 0s;
+            animation-duration: 7s;
+        }
+
+        .f2 {
+            top: 5%;
+            left: 5%;
+            font-size: 2rem;
+            animation-delay: 1s;
+            animation-duration: 5s;
+        }
+
+        .f3 {
+            top: 1%;
+            left: 10%;
+            font-size: 2.8rem;
+            animation-delay: 2s;
+            animation-duration: 8s;
+        }
+
+        .f4 {
+            top: 8%;
+            left: 3%;
+            font-size: 2rem;
+            animation-delay: 0.5s;
+            animation-duration: 6s;
+        }
+
+        /* top-right cluster */
+        .f5 {
+            top: 2%;
+            right: 1%;
+            font-size: 3.5rem;
+            animation-delay: 1.5s;
+            animation-duration: 7s;
+        }
+
+        .f6 {
+            top: 6%;
+            right: 6%;
+            font-size: 2rem;
+            animation-delay: 0.8s;
+            animation-duration: 5s;
+        }
+
+        .f7 {
+            top: 1%;
+            right: 12%;
+            font-size: 2.8rem;
+            animation-delay: 2.5s;
+            animation-duration: 8s;
+        }
+
+        .f8 {
+            top: 9%;
+            right: 3%;
+            font-size: 2rem;
+            animation-delay: 0.3s;
+            animation-duration: 6s;
+        }
+
+        /* bottom-left cluster */
+        .f9 {
+            bottom: 2%;
+            left: 1%;
+            font-size: 3.5rem;
+            animation-delay: 1s;
+            animation-duration: 7s;
+        }
+
+        .f10 {
+            bottom: 6%;
+            left: 6%;
+            font-size: 2rem;
+            animation-delay: 2s;
+            animation-duration: 5s;
+        }
+
+        .f11 {
+            bottom: 1%;
+            left: 12%;
+            font-size: 2.8rem;
+            animation-delay: 0.5s;
+            animation-duration: 8s;
+        }
+
+        /* bottom-right cluster */
+        .f12 {
+            bottom: 2%;
+            right: 1%;
+            font-size: 3.5rem;
+            animation-delay: 0.7s;
+            animation-duration: 7s;
+        }
+
+        .f13 {
+            bottom: 6%;
+            right: 6%;
+            font-size: 2rem;
+            animation-delay: 1.8s;
+            animation-duration: 5s;
+        }
+
+        .f14 {
+            bottom: 1%;
+            right: 12%;
+            font-size: 2.8rem;
+            animation-delay: 1.2s;
+            animation-duration: 8s;
+        }
+
+        /* floating mid butterflies */
+        .f15 {
+            top: 45%;
+            left: 0%;
+            font-size: 2.2rem;
+            animation-delay: 3s;
+            animation-duration: 9s;
+        }
+
+        .f16 {
+            top: 50%;
+            right: 0%;
+            font-size: 2.2rem;
+            animation-delay: 1.5s;
+            animation-duration: 9s;
+        }
+
+        @keyframes floatFlower {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-18px) rotate(8deg);
+            }
+
+            66% {
+                transform: translateY(-8px) rotate(-5deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            border-bottom: 3px solid rgba(168, 85, 247, 0.3);
+            padding: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.12);
+        }
+
+        nav a {
+            color: #4c1d95;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            transition: all 0.25s;
+            margin: 0 4px;
+        }
+
+        nav a:hover {
+            background: linear-gradient(90deg, var(--pink), var(--purple));
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(168, 85, 247, 0.35);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            z-index: 1;
+            padding: 110px 40px 90px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--pink), var(--purple));
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 22px;
+            border-radius: 30px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);
+            animation: popIn 0.6s ease;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 5.5rem;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .word-schools {
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .word-color {
+            background: linear-gradient(135deg, var(--pink), var(--orange), var(--yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            font-size: 7rem;
+        }
+
+        .hero-p {
+            font-size: 1.35rem;
+            max-width: 800px;
+            margin: 36px auto 0;
+            font-weight: 500;
+            line-height: 1.7;
+            color: #374151;
+        }
+
+        /* ===== CARDS SECTION ===== */
+        .grid-section {
+            position: relative;
+            z-index: 1;
+            padding: 60px 40px 100px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+
+        .info-card {
+            border-radius: 24px;
+            padding: 44px 40px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -40%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            opacity: 0.18;
+            background: #fff;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+        }
+
+        .card-1 {
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            color: #fff;
+        }
+
+        .card-2 {
+            background: linear-gradient(135deg, #f97316, #fbbf24);
+            color: #fff;
+        }
+
+        .card-3 {
+            background: linear-gradient(135deg, #14b8a6, #22c55e);
+            color: #fff;
+        }
+
+        .card-4 {
+            background: linear-gradient(135deg, #ec4899, #f43f5e);
+            color: #fff;
+        }
+
+        .card-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 16px;
+            display: block;
+            animation: floatFlower 4s ease-in-out infinite;
+        }
+
+        .info-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin: 0 0 14px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            margin: 0;
+            opacity: 0.92;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            background: linear-gradient(90deg, #1e1b4b, #312e81, #4c1d95);
+            color: #fff;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+
+        footer span {
+            font-size: 1.2rem;
+            margin: 0 6px;
+        }
+
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+
+            .word-color {
+                font-size: 4rem;
+            }
+
+            .grid-section {
+                grid-template-columns: 1fr;
+                padding: 40px 20px 70px;
+            }
+
+            .hero {
+                padding: 70px 20px 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING PAINT BRUSHES -->
+    <div class="flowers" aria-hidden="true">
+        <span class="flower f1">🎨</span>
+        <span class="flower f2">🖌️</span>
+        <span class="flower f3">🖍️</span>
+        <span class="flower f4">✏️</span>
+        <span class="flower f5">🖌️</span>
+        <span class="flower f6">🎨</span>
+        <span class="flower f7">🖍️</span>
+        <span class="flower f8">🖼️</span>
+        <span class="flower f9">🎨</span>
+        <span class="flower f10">🖌️</span>
+        <span class="flower f11">🖍️</span>
+        <span class="flower f12">🎨</span>
+        <span class="flower f13">🖌️</span>
+        <span class="flower f14">✏️</span>
+        <span class="flower f15">🖍️</span>
+        <span class="flower f16">🎨</span>
+    </div>
+
+        <nav>
+        <a href="anasayfa.html">🏠 Anasayfa</a>
+        <a href="hakkimizda.html">💡 Hakkımızda</a>
+        <a href="proje-sureci.html">🎨 Proje Süreci</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-badge">✨ Naip Hüseyin Anadolu Lisesi Harezmi Projesi ✨</div>
+        <h1>
+            <span class="word-schools">Okul</span>
+            <span class="word-color">RENKLENİYOR</span>
+        </h1>
+        <p class="hero-p">
+            Okullarımızın renksiz ve donuk duvarlarına karşı başlattığımız bu hareketle,
+            sanatı ve bilgiyi koridorlara taşıyoruz. Her fırça darbesiyle geleceği boyuyoruz 🎨
+        </p>
+    </header>
+
+    <section class="grid-section">
+        <div class="info-card card-1">
+            <img src="harezmi.png" class="card-img" alt="Harezmi Projesi">
+            <h2>Harezmi Projesi</h2>
+            <p>
+                Bu proje, okullardaki fiziksel mekanların öğrenme sürecine olan etkisini sanatla
+                birleştiren bir adımdır. Duvar resimlerimiz, öğrencilerin her an bilgiyle ve
+                estetikle iç içe olmasını sağlar.
+            </p>
+        </div>
+
+        <div class="info-card card-2">
+            <img src="qr.png" class="card-img" alt="QR Entegrasyonu">
+            <h2>QR Entegrasyonu</h2>
+            <p>
+                Duvarlardaki her eser, dijital bir bilgi dünyasına açılan birer kapıdır.
+                QR kodlarını taratarak sanatın arkasındaki hikayeyi keşfedin.
+            </p>
+        </div>
+
+        <div class="info-card card-3">
+            <img src="bilim.png" class="card-img" alt="Bilim ve Sanat">
+            <h2>Bilim & Sanat</h2>
+            <p>
+                Harezmi'den Einstein'a, Marie Curie'den İbni Sina'ya; büyük bilim insanlarının
+                portreleri koridorlarımızı süslüyor ve öğrencilere ilham veriyor.
+            </p>
+        </div>
+
+        <div class="info-card card-4">
+            <img src="spor.png" class="card-img" alt="Spor ve Kültür">
+            <h2>Spor & Kültür</h2>
+            <p>
+                Futboldan badminton'a, basketboldan korling'e; spor dünyasının renkleri de
+                okulumuzun duvarlarında hayat buluyor. Hareketi hisset!
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <span>🌸</span> © 2026 NAİP HÜSEYİN ANADOLU LİSESİ – GELECEĞİ RENKLENDİR <span>🌸</span>
+    </footer>
+
+</body>
+
+</html>

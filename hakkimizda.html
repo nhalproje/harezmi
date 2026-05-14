@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naip Hüseyin Anadolu Lisesi - Hakkımızda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg,
+                #fce7f3 0%,
+                #ede9fe 25%,
+                #dbeafe 50%,
+                #d1fae5 75%,
+                #fef3c7 100%);
+            background-size: 400% 400%;
+            animation: bgShift 14s ease infinite;
+            color: #1a1a2e;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgShift {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ===== FLOWERS ===== */
+        .flowers {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .flower {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: floatFlower 6s ease-in-out infinite;
+            opacity: 0.5;
+            user-select: none;
+        }
+        .f1  { top:2%;  left:1%;  font-size:3.5rem; animation-delay:0s;   animation-duration:7s; }
+        .f2  { top:5%;  left:6%;  font-size:2rem;   animation-delay:1s;   animation-duration:5s; }
+        .f3  { top:1%;  left:11%; font-size:2.8rem; animation-delay:2s;   animation-duration:8s; }
+        .f4  { top:9%;  left:3%;  font-size:2rem;   animation-delay:0.5s; animation-duration:6s; }
+        .f5  { top:2%;  right:1%; font-size:3.5rem; animation-delay:1.5s; animation-duration:7s; }
+        .f6  { top:6%;  right:6%; font-size:2rem;   animation-delay:0.8s; animation-duration:5s; }
+        .f7  { top:1%;  right:12%;font-size:2.8rem; animation-delay:2.5s; animation-duration:8s; }
+        .f8  { top:10%; right:3%; font-size:2rem;   animation-delay:0.3s; animation-duration:6s; }
+        .f9  { bottom:2%;  left:1%;  font-size:3.5rem; animation-delay:1s;   animation-duration:7s; }
+        .f10 { bottom:6%;  left:6%;  font-size:2rem;   animation-delay:2s;   animation-duration:5s; }
+        .f11 { bottom:1%;  left:12%; font-size:2.8rem; animation-delay:0.5s; animation-duration:8s; }
+        .f12 { bottom:2%;  right:1%; font-size:3.5rem; animation-delay:0.7s; animation-duration:7s; }
+        .f13 { bottom:6%;  right:6%; font-size:2rem;   animation-delay:1.8s; animation-duration:5s; }
+        .f14 { bottom:1%;  right:12%;font-size:2.8rem; animation-delay:1.2s; animation-duration:8s; }
+        .f15 { top:45%;  left:0%;  font-size:2.2rem; animation-delay:3s;   animation-duration:9s; }
+        .f16 { top:50%;  right:0%; font-size:2.2rem; animation-delay:1.5s; animation-duration:9s; }
+
+        @keyframes floatFlower {
+            0%   { transform: translateY(0px)   rotate(0deg); }
+            33%  { transform: translateY(-18px) rotate(8deg); }
+            66%  { transform: translateY(-8px)  rotate(-5deg); }
+            100% { transform: translateY(0px)   rotate(0deg); }
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(12px);
+            border-bottom: 3px solid rgba(99,102,241,0.25);
+            padding: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.1);
+        }
+
+        nav a {
+            color: #4c1d95;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            transition: all 0.25s;
+            margin: 0 4px;
+        }
+
+        nav a:hover {
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(168,85,247,0.3);
+        }
+
+        /* ===== HEADER ===== */
+        .header-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 40px 30px;
+            text-align: center;
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 22px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 16px rgba(99,102,241,0.4);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            margin: 0;
+            text-transform: uppercase;
+            line-height: 1.05;
+        }
+
+        .word-biz {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .word-kimiz {
+            background: linear-gradient(135deg, #ec4899, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== CONTENT ===== */
+        .content-container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 30px auto 80px;
+            padding: 0 40px;
+            flex: 1;
+        }
+
+        .text-box {
+            border-radius: 24px;
+            padding: 44px;
+            margin-bottom: 36px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid rgba(255,255,255,0.6);
+        }
+
+        .text-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .text-box::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -30%;
+            width: 250px; height: 250px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .box-1 { background: linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; }
+        .box-2 { background: linear-gradient(135deg, #f43f5e, #ec4899); color:#fff; }
+
+        .box-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 14px;
+        }
+
+        .text-box h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.9rem;
+            font-weight: 900;
+            margin: 0 0 18px 0;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text-box p {
+            font-size: 1.1rem;
+            line-height: 1.75;
+            font-weight: 500;
+            margin-bottom: 16px;
+            opacity: 0.93;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text-box p:last-child { margin-bottom: 0; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            background: linear-gradient(90deg, #1e1b4b, #312e81, #4c1d95);
+            color: #fff;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
+
+        footer span { font-size: 1.2rem; margin: 0 6px; }
+
+        @media (max-width: 800px) {
+            h1 { font-size: 3rem; }
+            .text-box { padding: 28px; }
+            .content-container { padding: 0 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+                    <div class="flowers" aria-hidden="true">
+        <span class="flower f1">🎨</span>
+        <span class="flower f2">🖌️</span>
+        <span class="flower f3">🖍️</span>
+        <span class="flower f4">✏️</span>
+        <span class="flower f5">🖌️</span>
+        <span class="flower f6">🎨</span>
+        <span class="flower f7">🖍️</span>
+        <span class="flower f8">🖼️</span>
+        <span class="flower f9">🎨</span>
+        <span class="flower f10">🖌️</span>
+        <span class="flower f11">🖍️</span>
+        <span class="flower f12">🎨</span>
+        <span class="flower f13">🖌️</span>
+        <span class="flower f14">✏️</span>
+        <span class="flower f15">🖍️</span>
+        <span class="flower f16">🎨</span>
+    </div>
+
+        <nav>
+        <a href="anasayfa.html">🏠 Anasayfa</a>
+        <a href="hakkimizda.html">💡 Hakkımızda</a>
+        <a href="proje-sureci.html">🎨 Proje Süreci</a>
+    </nav>
+
+    <div class="header-section">
+        <div class="page-badge">💜 Bizi Tanıyın 💜</div>
+        <h1>
+            <span class="word-biz">BİZ </span><span class="word-kimiz">KİMİZ?</span>
+        </h1>
+    </div>
+
+    <div class="content-container">
+        <div class="text-box box-1">
+            <span class="box-icon">🎨</span>
+            <h2>Naip Hüseyin Anadolu Lisesi Harezmi Projesi Nedir?</h2>
+            <p>
+                Okulların renksiz ve boş duvarlarını sanat ve bilimle buluşturmayı hedefleyen bir öğrenci projesiyiz.
+                Okulumuzun duvarlarına çizdiğimiz portreler ve figürler, sıradan bir dekorasyon olmanın çok ötesinde
+                birer bilgi kaynağıdır. Öğrencilerin her gün gelip geçtiği koridorları, bir açık hava müzesine ve
+                interaktif bir eğitim platformuna dönüştürüyoruz.
+            </p>
+            <p>
+                Her bir eserin yanına yerleştirdiğimiz <strong>QR kodlar</strong> sayesinde, çizimlerin arkasındaki
+                hikayeye, bilim insanlarının hayatlarına ve spor dallarının kurallarına dijital ortamda saniyeler
+                içinde ulaşabilirsiniz.
+            </p>
+        </div>
+
+        <div class="text-box box-2">
+            <span class="box-icon">🌟</span>
+            <h2>Amacımız Ne?</h2>
+            <p>
+                Temel amacımız, okul koridorlarını sıkıcı geçiş alanları olmaktan çıkarıp; ilham verici, düşündürücü
+                ve merak uyandıran bir öğrenme ortamına çevirmek. Öğrenciler duvarlara bakarken sadece bir resim
+                görmemeli, arkasındaki bilimi, tarihi ve emeği de keşfedebilmeli.
+            </p>
+            <p>
+                Fiziksel sanat ile dijital teknolojiyi bir araya getiren Naip Hüseyin Anadolu Lisesi Harezmi Projesi,
+                okul duvarlarını dilsiz olmaktan kurtarıp, onlara anlatacak hikayeler veriyor.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <span>🌸</span> © 2026 NAİP HÜSEYİN ANADOLU LİSESİ – GELECEĞİ RENKLENDİR <span>🌸</span>
+    </footer>
+
+</body>
+
+</html>
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STERNENNACHT - Naip Hüseyin Anadolu Lisesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kultur_sanat_style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 40%, #24243e 70%, #1a1a2e 100%);
+            background-size: 400% 400%;
+            animation: bgShift 18s ease infinite;
+            color: #e2e8f0;
+        }
+        .flower { opacity: 0.7; }
+        .f1::after, .f2::after { content: "⭐"; }
+
+        h1 {
+            background: linear-gradient(135deg, #fbbf24, #f97316, #a855f7);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .subtitle {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .text-body {
+            background: rgba(255,255,255,0.08);
+            color: #cbd5e1;
+            border-image: linear-gradient(180deg, #fbbf24, #a855f7) 1;
+        }
+        .key-concepts { background: rgba(168,85,247,0.2); color: #ddd6fe; }
+        .thought-question { background: rgba(251,191,36,0.1); color: #fde68a; border-left: 4px solid #fbbf24; }
+        .image-box {
+            background: linear-gradient(135deg, #0f0c29, #1e1b4b);
+            border-color: rgba(251,191,36,0.4);
+        }
+        .image-box::before { content: "🌌"; font-size: 5rem; }
+        .image-box::after { content: "Van Gogh — 1889"; color: rgba(251,191,36,0.6); }
+
+        .stars-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .star {
+            position: absolute; background: #fff; border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50%       { opacity: 1;   transform: scale(1.4); }
+        }
+    </style>
+</head>
+<body>
+    <div class="flowers" aria-hidden="true">
+        <span class="flower f1">⭐</span><span class="flower f2">🌟</span>
+        <span class="flower f3">✨</span><span class="flower f4">🎨</span>
+        <span class="flower f5">🌟</span><span class="flower f6">⭐</span>
+        <span class="flower f7">✨</span><span class="flower f8">🖌️</span>
+        <span class="flower f9">⭐</span><span class="flower f10">🌟</span>
+        <span class="flower f11">✨</span><span class="flower f12">⭐</span>
+        <span class="flower f13">🌟</span><span class="flower f14">🎨</span>
+        <span class="flower f15">✨</span><span class="flower f16">⭐</span>
+    </div>
+
+    <div class="stars-bg" id="starsBg"></div>
+
+    <nav style="background:rgba(15,12,41,0.85); border-bottom-color:rgba(251,191,36,0.3);">
+        <a href="anasayfa.html" style="color:#ddd6fe;">🏠 Startseite</a>
+        <a href="hakkimizda.html" style="color:#ddd6fe;">💡 Über uns</a>
+        <a href="proje-sureci.html" style="color:#ddd6fe;">🎨 Projektprozess</a>
+    </nav>
+
+    <main class="main-container">
+        <section class="image-section">
+            <div class="image-box"></div>
+        </section>
+        <section class="content-section">
+            <div class="tag" style="background:linear-gradient(90deg,#fbbf24,#f97316);">KULTUR UND KUNST</div>
+            <h1>STERNENNACHT</h1>
+            <div class="subtitle">Vincent van Goghs Spur am Himmel</div>
+            <div class="text-body">
+                Die Sternennacht ist eines der bekanntesten Werke von Vincent van Gogh. Wenn man dieses Gemälde betrachtet, fällt als Erstes auf, dass der Himmel nicht ruhig, sondern in Bewegung ist. Sterne, Mond und Wolken scheinen in einem Fluss zu sein. Die Stille der Nacht wird durch Van Goghs Pinselstriche lebendig und vibrierend. Daher ist das Gemälde nicht nur eine Nachtlandschaft, sondern ein mit Emotionen verwobener Ausdruck des Himmels.
+                <br><br>
+                Im Gemälde kreist der Himmel mit großer Energie über dem Dorf. Dunkles Blau, Gelb und Weiß vermischen sich. Die wirbelnden Linien rufen beim Betrachter sowohl ein Gefühl von Frieden als auch von Bewegung hervor. Während das Dorf unten ruhiger erscheint, ist der Himmel darüber sehr kraftvoll. Dieser Kontrast regt zum Nachdenken über den Unterschied zwischen der inneren Welt des Menschen und der äußeren Welt an.
+                <br><br>
+                In Van Goghs Gemälden wird die Realität oft nicht exakt kopiert. Der Künstler verbindet die Welt, die er sieht, mit seinem eigenen Gemütszustand. Auch in der Sternennacht ist die Natur nicht nur eine mit den Augen gesehene Landschaft. Der Himmel wird zum Symbol für die Emotionen und Bewegungen im Inneren des Künstlers. Deshalb können Menschen, die das Gemälde betrachten, unterschiedliche Emotionen empfinden: Einsamkeit, Hoffnung, Bewunderung, Frieden oder einen tiefen Zustand der Nachdenklichkeit.
+                <br><br>
+                Auch der Zypressenbaum in dem Werk ist auffällig. Mit seiner dunklen Farbe und seiner nach oben ragenden Form scheint er den Himmel erreichen zu wollen. Die Ordnung, die zwischen Dorf, Bergen, Mond und Sternen entsteht, zieht den Betrachter in das Gemälde hinein. Van Goghs Pinselstriche verleihen dem Bild eine Bewegung, die wie ein musikalischer Rhythmus wirkt. Daher beginnt das Auge, wenn man das Gemälde lange betrachtet, durch den Himmel zu wandern.
+                <br><br>
+                Die Sternennacht ist ein sehr starkes Beispiel dafür, dass Kunst nicht nur das zeigen kann, was wir sehen, sondern auch das, was wir fühlen. Eine Nachtlandschaft kann in den Händen eines Künstlers zu einem universellen Werk werden, das die innere Welt des Menschen beschreibt. Dieses Gemälde lässt uns nachdenken: Menschen, die denselben Himmel betrachten, können unterschiedliche Emotionen erleben; Kunst macht diese Emotionen sichtbar.
+                <div class="key-concepts"><strong>Schlüsselbegriffe:</strong> Van Gogh, Expressionismus, Himmel, Pinselstriche, Emotion</div>
+                <div class="thought-question"><strong>Frage zum Nachdenken:</strong> Würde das Gemälde dieselbe Wirkung auf uns haben, wenn der Himmel in der Sternennacht ruhig wäre?</div>
+            </div>
+            <div class="footer-actions">
+                <a href="yildizli_gece_tr.html" class="btn-action">🇹🇷 TÜRKÇEYE GEÇ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:linear-gradient(90deg,#0f0c29,#302b63,#24243e);">
+        <span>⭐</span> © 2026 NAİP HÜSEYİN ANADOLU LİSESİ – GELECEĞİ RENKLENDİR <span>⭐</span>
+    </footer>
+
+    <script>
+        const bg = document.getElementById('starsBg');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1;
+            star.style.cssText = `
+                width:${size}px; height:${size}px;
+                top:${Math.random()*100}%;
+                left:${Math.random()*100}%;
+                animation-delay:${Math.random()*4}s;
+                animation-duration:${Math.random()*3+2}s;
+            `;
+            bg.appendChild(star);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YILDIZLI GECE - Naip Hüseyin Anadolu Lisesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kultur_sanat_style.css">
+    <style>
+        /* Gece teması — mavi tonları */
+        body {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 40%, #24243e 70%, #1a1a2e 100%);
+            background-size: 400% 400%;
+            animation: bgShift 18s ease infinite;
+            color: #e2e8f0;
+        }
+        .flower { opacity: 0.7; }
+        .f1::after, .f2::after { content: "⭐"; }
+
+        h1 {
+            background: linear-gradient(135deg, #fbbf24, #f97316, #a855f7);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .subtitle {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .text-body {
+            background: rgba(255,255,255,0.08);
+            color: #cbd5e1;
+            border-image: linear-gradient(180deg, #fbbf24, #a855f7) 1;
+        }
+        .key-concepts { background: rgba(168,85,247,0.2); color: #ddd6fe; }
+        .thought-question { background: rgba(251,191,36,0.1); color: #fde68a; border-left: 4px solid #fbbf24; }
+        .image-box {
+            background: linear-gradient(135deg, #0f0c29, #1e1b4b);
+            border-color: rgba(251,191,36,0.4);
+        }
+        .image-box::before { content: "🌌"; font-size: 5rem; }
+        .image-box::after { content: "Van Gogh — 1889"; color: rgba(251,191,36,0.6); }
+
+        /* Yıldız efekti */
+        .stars-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .star {
+            position: absolute; background: #fff; border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50%       { opacity: 1;   transform: scale(1.4); }
+        }
+    </style>
+</head>
+<body>
+    <div class="flowers" aria-hidden="true">
+        <span class="flower f1">⭐</span><span class="flower f2">🌟</span>
+        <span class="flower f3">✨</span><span class="flower f4">🎨</span>
+        <span class="flower f5">🌟</span><span class="flower f6">⭐</span>
+        <span class="flower f7">✨</span><span class="flower f8">🖌️</span>
+        <span class="flower f9">⭐</span><span class="flower f10">🌟</span>
+        <span class="flower f11">✨</span><span class="flower f12">⭐</span>
+        <span class="flower f13">🌟</span><span class="flower f14">🎨</span>
+        <span class="flower f15">✨</span><span class="flower f16">⭐</span>
+    </div>
+
+    <!-- Arka plan yıldızları -->
+    <div class="stars-bg" id="starsBg"></div>
+
+    <nav style="background:rgba(15,12,41,0.85); border-bottom-color:rgba(251,191,36,0.3);">
+        <a href="anasayfa.html" style="color:#ddd6fe;">🏠 Anasayfa</a>
+        <a href="hakkimizda.html" style="color:#ddd6fe;">💡 Hakkımızda</a>
+        <a href="proje-sureci.html" style="color:#ddd6fe;">🎨 Proje Süreci</a>
+    </nav>
+
+    <main class="main-container">
+        <section class="image-section">
+            <div class="image-box"></div>
+        </section>
+        <section class="content-section">
+            <div class="tag" style="background:linear-gradient(90deg,#fbbf24,#f97316);">KÜLTÜR SANAT</div>
+            <h1>YILDIZLI GECE</h1>
+            <div class="subtitle">Vincent van Gogh'un gökyüzüne bıraktığı iz</div>
+            <div class="text-body">
+                Yıldızlı Gece, Vincent van Gogh'un en tanınmış eserlerinden biridir. Bu tabloya bakıldığında ilk dikkat çeken şey, gökyüzünün durgun değil hareketli oluşudur. Yıldızlar, ay ve bulutlar sanki bir akış içindedir. Gecenin sessizliği, Van Gogh'un fırça darbeleriyle canlı ve titreşimli bir hâle gelir. Bu nedenle tablo yalnızca bir gece manzarası değil, duygularla örülmüş bir gökyüzü anlatımıdır.
+                <br><br>
+                Tabloda gökyüzü, kasabanın üzerinde büyük bir enerjiyle dolaşır. Koyu maviler, sarılar ve beyazlar birbirine karışır. Dönen çizgiler, izleyicide hem huzur hem de hareket hissi uyandırır. Aşağıdaki kasaba daha sakin görünürken, yukarıdaki gökyüzü oldukça güçlüdür. Bu karşıtlık, insanın iç dünyasıyla dış dünya arasındaki farkı düşündürür.
+                <br><br>
+                Van Gogh'un resimlerinde gerçeklik çoğu zaman birebir kopyalanmaz. Sanatçı, gördüğü dünyayı kendi ruh hâliyle birleştirerek anlatır. Yıldızlı Gece'de de doğa, yalnızca gözle görülen bir manzara değildir. Gökyüzü, sanatçının içindeki duyguların ve hareketin simgesi hâline gelir. Bu nedenle tabloya bakan kişiler farklı duygular hissedebilir: yalnızlık, umut, hayranlık, huzur ya da derin bir düşünce hâli.
+                <br><br>
+                Eserdeki servi ağacı da dikkat çekicidir. Koyu rengi ve yukarıya doğru uzanan biçimiyle gökyüzüne ulaşmak ister gibidir. Kasaba, dağlar, ay ve yıldızlar arasında kurulan bu düzen, izleyiciyi tablonun içine çeker. Van Gogh'un fırça darbeleri resme bir müzik ritmi gibi hareket kazandırır. Bu nedenle tabloya uzun süre bakıldığında göz, gökyüzünün içinde dolaşmaya başlar.
+                <br><br>
+                Yıldızlı Gece, sanatın yalnızca gördüğümüzü değil, hissettiğimizi de anlatabileceğini gösteren çok güçlü bir örnektir. Bir gece manzarası, sanatçının elinde insanın iç dünyasını anlatan evrensel bir esere dönüşebilir. Bu tablo bize şunu düşündürür: Aynı gökyüzüne bakan insanlar farklı duygular yaşayabilir; sanat ise bu duyguları görünür hâle getirir.
+                <div class="key-concepts"><strong>Anahtar Kavramlar:</strong> Van Gogh, dışavurum, gökyüzü, fırça darbeleri, duygu</div>
+                <div class="thought-question"><strong>Düşündüren Soru:</strong> Yıldızlı Gece'de gökyüzü sakin olsaydı, tablo bizde aynı etkiyi bırakır mıydı?</div>
+            </div>
+            <div class="footer-actions">
+                <a href="yildizli_gece_de.html" class="btn-action">🇩🇪 ALMANCAYA GEÇ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:linear-gradient(90deg,#0f0c29,#302b63,#24243e);">
+        <span>⭐</span> © 2026 NAİP HÜSEYİN ANADOLU LİSESİ – GELECEĞİ RENKLENDİR <span>⭐</span>
+    </footer>
+
+    <script>
+        // Arka plana rastgele küçük yıldızlar ekle
+        const bg = document.getElementById('starsBg');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1;
+            star.style.cssText = `
+                width:${size}px; height:${size}px;
+                top:${Math.random()*100}%;
+                left:${Math.random()*100}%;
+                animation-delay:${Math.random()*4}s;
+                animation-duration:${Math.random()*3+2}s;
+            `;
+            bg.appendChild(star);
+        }
+    </script>
+</body>
+</html>
