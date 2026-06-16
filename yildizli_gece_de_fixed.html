@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STERNENNACHT - Naip Hüseyin Anadolu Lisesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kultur_sanat_style.css">
+    <style>
+        /* Gece teması — mavi tonları */
+        body {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 40%, #24243e 70%, #1a1a2e 100%);
+            background-size: 400% 400%;
+            animation: bgShift 18s ease infinite;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        @keyframes bgShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+        
+        .flowers { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; overflow:hidden; }
+        .flower { position:absolute; font-size:2.5rem; animation:floatFlower 6s ease-in-out infinite; opacity:0.7; user-select:none; }
+        .f1{top:2%;left:1%;font-size:3rem;animation-delay:0s;animation-duration:7s}
+        .f2{top:5%;left:6%;font-size:1.8rem;animation-delay:1s;animation-duration:5s}
+        .f3{top:1%;left:11%;font-size:2.5rem;animation-delay:2s;animation-duration:8s}
+        .f4{top:9%;left:3%;font-size:1.8rem;animation-delay:.5s;animation-duration:6s}
+        .f5{top:2%;right:1%;font-size:3rem;animation-delay:1.5s;animation-duration:7s}
+        .f6{top:6%;right:6%;font-size:1.8rem;animation-delay:.8s;animation-duration:5s}
+        .f7{top:1%;right:12%;font-size:2.5rem;animation-delay:2.5s;animation-duration:8s}
+        .f8{top:10%;right:3%;font-size:1.8rem;animation-delay:.3s;animation-duration:6s}
+        .f9{bottom:2%;left:1%;font-size:3rem;animation-delay:1s;animation-duration:7s}
+        .f10{bottom:6%;left:6%;font-size:1.8rem;animation-delay:2s;animation-duration:5s}
+        .f11{bottom:1%;left:12%;font-size:2.5rem;animation-delay:.5s;animation-duration:8s}
+        .f12{bottom:2%;right:1%;font-size:3rem;animation-delay:.7s;animation-duration:7s}
+        .f13{bottom:6%;right:6%;font-size:1.8rem;animation-delay:1.8s;animation-duration:5s}
+        .f14{bottom:1%;right:12%;font-size:2.5rem;animation-delay:1.2s;animation-duration:8s}
+        .f15{top:45%;left:0%;font-size:2rem;animation-delay:3s;animation-duration:9s}
+        .f16{top:50%;right:0%;font-size:2rem;animation-delay:1.5s;animation-duration:9s}
+        @keyframes floatFlower { 0%{transform:translateY(0) rotate(0deg)} 33%{transform:translateY(-15px) rotate(8deg)} 66%{transform:translateY(-7px) rotate(-5deg)} 100%{transform:translateY(0) rotate(0deg)} }
+
+        nav { display:flex; justify-content:center; background:rgba(15,12,41,0.85); backdrop-filter:blur(12px); border-bottom:3px solid rgba(251,191,36,0.3); padding:14px; position:sticky; top:0; z-index:200; box-shadow:0 4px 20px rgba(0,0,0,0.3); }
+        nav a { color:#ddd6fe; text-decoration:none; font-weight:800; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; padding:10px 22px; border-radius:30px; border:2px solid transparent; transition:all 0.25s; margin:0 4px; }
+        nav a:hover { background:linear-gradient(90deg,#a855f7,#6366f1); color:#fff; transform:translateY(-2px); box-shadow:0 6px 18px rgba(168,85,247,0.35); }
+
+        .main-container { flex:1; display:flex; padding:50px 40px; max-width:1400px; margin:0 auto; width:100%; box-sizing:border-box; gap:60px; position:relative; z-index:1; }
+        .image-section { flex:1; position:relative; }
+        .image-box { width:100%; height:600px; border-radius:24px; border:5px solid rgba(251,191,36,0.4); background:linear-gradient(135deg,#0f0c29,#1e1b4b); overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; }
+        .image-box::before { content:"🌌"; font-size:5rem; }
+        .image-box::after { content:"Van Gogh — 1889"; color:rgba(251,191,36,0.6); font-weight:700; font-size:1.2rem; letter-spacing:2px; text-transform:uppercase; }
+        .image-box:has(img)::before { display: none !important; }
+
+        .content-section { flex:1.2; display:flex; flex-direction:column; }
+        .tag { background:linear-gradient(90deg,#fbbf24,#f97316); color:#fff; padding:6px 20px; font-weight:900; font-size:0.8rem; text-transform:uppercase; width:fit-content; margin-bottom:20px; border-radius:30px; box-shadow:0 4px 16px rgba(251,191,36,0.35); }
+        h1 { font-family:'Outfit',sans-serif; font-size:4.5rem; font-weight:900; margin:0; line-height:1; text-transform:uppercase; background:linear-gradient(135deg,#fbbf24,#f97316,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .subtitle { font-size:1.4rem; background:linear-gradient(90deg,#60a5fa,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin:15px 0 30px 0; font-weight:700; }
+        .text-body { font-size:1.1rem; line-height:1.85; color:#cbd5e1; text-align:justify; margin-bottom:24px; border-left:5px solid; border-image:linear-gradient(180deg,#fbbf24,#a855f7) 1; background:rgba(255,255,255,0.08); border-radius:0 16px 16px 0; padding:20px 25px; backdrop-filter:blur(6px); }
+        
+        .key-concepts { background: rgba(168,85,247,0.2); color: #ddd6fe; padding:12px 18px; border-radius:8px; margin-top:20px; font-weight:500; }
+        .thought-question { background: rgba(251,191,36,0.1); color: #fde68a; border-left: 4px solid #fbbf24; padding:12px 18px; border-radius:0 8px 8px 0; margin-top:15px; font-style:italic; }
+
+        .footer-actions { margin-top:auto; display:flex; gap:20px; }
+        .btn-action { display:inline-block; padding:15px 35px; background:linear-gradient(90deg,#a855f7,#6366f1); color:#fff; text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:1px; transition:all 0.3s; border:none; cursor:pointer; border-radius:30px; box-shadow:0 6px 20px rgba(168,85,247,0.4); }
+        .btn-action:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(168,85,247,0.55); }
+
+        footer { position:relative; z-index:1; padding:36px; background:linear-gradient(90deg,#0f0c29,#302b63,#24243e); color:#fff; text-align:center; font-weight:900; text-transform:uppercase; letter-spacing:2px; font-size:0.85rem; }
+        footer span { font-size:1.1rem; margin:0 6px; }
+
+        @media(max-width:1000px){ .main-container{flex-direction:column;padding:20px} .image-box{height:300px} h1{font-size:3rem} }
+
+        /* Yıldız efekti */
+        .stars-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .star {
+            position: absolute; background: #fff; border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50%       { opacity: 1;   transform: scale(1.4); }
+        }
+    </style>
+</head>
+<body>
+    <div class="flowers" aria-hidden="true">
+        <span class="flower f1">⭐</span><span class="flower f2">🌟</span>
+        <span class="flower f3">✨</span><span class="flower f4">🎨</span>
+        <span class="flower f5">🌟</span><span class="flower f6">⭐</span>
+        <span class="flower f7">✨</span><span class="flower f8">🖌️</span>
+        <span class="flower f9">⭐</span><span class="flower f10">🌟</span>
+        <span class="flower f11">✨</span><span class="flower f12">⭐</span>
+        <span class="flower f13">🌟</span><span class="flower f14">🎨</span>
+        <span class="flower f15">✨</span><span class="flower f16">⭐</span>
+    </div>
+
+    <!-- Arka plan yıldızları -->
+    <div class="stars-bg" id="starsBg"></div>
+
+    <nav>
+        <a href="anasayfa.html">🏠 Anasayfa</a>
+        <a href="hakkimizda.html">💡 Hakkımızda</a>
+        <a href="proje-sureci.html">🎨 Proje Süreci</a>
+    </nav>
+
+    <main class="main-container">
+        <section class="image-section">
+            <div class="image-box">
+                <img src="kalanlar/yildizli gece.jpeg" alt="G�rsel">
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="tag">KULTUR & KUNST</div>
+            <h1>STERNENNACHT</h1>
+            <div class="subtitle">Vincent van Goghs Spur am Himmel</div>
+            <div class="text-body">
+                Die Sternennacht ist eines der bekanntesten Werke von Vincent van Gogh. Das Erste, was bei Betrachtung dieses Gemäldes auffällt, ist, dass der Himmel nicht ruhig, sondern in Bewegung ist. Sterne, Mond und Wolken scheinen in einem Fluss zu sein. Die Stille der Nacht wird durch van Goghs Pinselstriche lebendig und vibrierend. Daher ist das Gemälde nicht nur eine Nachtlandschaft, sondern eine mit Emotionen verwobene Darstellung des Himmels.
+                <br><br>
+                Im Gemälde wandert der Himmel mit großer Energie über die Stadt. Dunkles Blau, Gelb und Weiß mischen sich. Wirbelnde Linien wecken im Betrachter sowohl ein Gefühl von Ruhe als auch von Bewegung. Während die Stadt unten ruhiger erscheint, ist der Himmel oben sehr kraftvoll. Dieser Kontrast regt zum Nachdenken über den Unterschied zwischen der inneren Welt des Menschen und der äußeren Welt an.
+                <br><br>
+                In van Goghs Gemälden wird die Realität oft nicht exakt kopiert. Der Künstler beschreibt die Welt, die er sieht, indem er sie mit seiner eigenen Stimmung verbindet. Auch in der Sternennacht ist die Natur nicht nur eine sichtbare Landschaft. Der Himmel wird zum Symbol für die Gefühle und Bewegungen im Inneren des Künstlers. Daher können Menschen, die das Gemälde betrachten, verschiedene Emotionen empfinden: Einsamkeit, Hoffnung, Bewunderung, Ruhe oder einen tiefen Zustand des Nachdenkens.
+                <br><br>
+                Auch die Zypresse im Werk ist bemerkenswert. Mit ihrer dunklen Farbe und ihrer nach oben gerichteten Form scheint sie den Himmel erreichen zu wollen. Diese Ordnung zwischen Stadt, Bergen, Mond und Sternen zieht den Betrachter in das Gemälde. Van Goghs Pinselstriche verleihen dem Bild eine Bewegung wie ein musikalischer Rhythmus. Deshalb fängt das Auge an, im Himmel umherzuwandern, wenn man das Gemälde lange betrachtet.
+                <br><br>
+                Die Sternennacht ist ein sehr starkes Beispiel dafür, dass Kunst nicht nur das beschreiben kann, was wir sehen, sondern auch das, was wir fühlen. Eine Nachtlandschaft kann sich in den Händen des Künstlers in ein universelles Werk verwandeln, das die innere Welt des Menschen beschreibt. Dieses Gemälde lässt uns Folgendes überdenken: Menschen, die denselben Himmel betrachten, können verschiedene Gefühle erleben; die Kunst macht diese Gefühle sichtbar.
+                <div class="key-concepts"><strong>Schlüsselbegriffe:</strong> Van Gogh, Expression, Himmel, Pinselstriche, Emotion</div>
+                <div class="thought-question"><strong>Frage zum Nachdenken:</strong> Wenn der Himmel in der Sternennacht ruhig wäre, hätte das Gemälde auf uns die gleiche Wirkung?</div>
+            </div>
+            <div class="footer-actions">
+                <a href="yildizli_gece_tr.html" class="btn-action">🇹🇷 TÜRKÇEYE GEÇ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>⭐</span> © 2026 NAİP HÜSEYİN ANADOLU LİSESİ – GELECEĞİ RENKLENDİR <span>⭐</span>
+    </footer>
+
+    <script>
+        // Arka plana rastgele küçük yıldızlar ekle
+        const bg = document.getElementById('starsBg');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1;
+            star.style.cssText = `
+                width:${size}px; height:${size}px;
+                top:${Math.random()*100}%;
+                left:${Math.random()*100}%;
+                animation-delay:${Math.random()*4}s;
+                animation-duration:${Math.random()*3+2}s;
+            `;
+            bg.appendChild(star);
+        }
+    </script>
+</body>
+</html>
+

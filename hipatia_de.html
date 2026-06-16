@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYPATIA - Naip Hüseyin Anadolu Lisesi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            color: #1a1a2e;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg,
+                    #fff0fa 0%, #e0f2fe 25%, #fef9c3 50%, #dcfce7 75%, #fce7f3 100%);
+            background-size: 400% 400%;
+            animation: bgShift 14s ease infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .flowers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: floatFlower 6s ease-in-out infinite;
+            opacity: 0.45;
+            user-select: none;
+        }
+
+        .f1 {
+            top: 2%;
+            left: 1%;
+            font-size: 3rem;
+            animation-delay: 0s;
+            animation-duration: 7s;
+        }
+
+        .f2 {
+            top: 5%;
+            left: 6%;
+            font-size: 1.8rem;
+            animation-delay: 1s;
+            animation-duration: 5s;
+        }
+
+        .f3 {
+            top: 1%;
+            left: 11%;
+            font-size: 2.5rem;
+            animation-delay: 2s;
+            animation-duration: 8s;
+        }
+
+        .f4 {
+            top: 9%;
+            left: 3%;
+            font-size: 1.8rem;
+            animation-delay: 0.5s;
+            animation-duration: 6s;
+        }
+
+        .f5 {
+            top: 2%;
+            right: 1%;
+            font-size: 3rem;
+            animation-delay: 1.5s;
+            animation-duration: 7s;
+        }
+
+        .f6 {
+            top: 6%;
+            right: 6%;
+            font-size: 1.8rem;
+            animation-delay: 0.8s;
+            animation-duration: 5s;
+        }
+
+        .f7 {
+            top: 1%;
+            right: 12%;
+            font-size: 2.5rem;
+            animation-delay: 2.5s;
+            animation-duration: 8s;
+        }
+
+        .f8 {
+            top: 10%;
+            right: 3%;
+            font-size: 1.8rem;
+            animation-delay: 0.3s;
+            animation-duration: 6s;
+        }
+
+        .f9 {
+            bottom: 2%;
+            left: 1%;
+            font-size: 3rem;
+            animation-delay: 1s;
+            animation-duration: 7s;
+        }
+
+        .f10 {
+            bottom: 6%;
+            left: 6%;
+            font-size: 1.8rem;
+            animation-delay: 2s;
+            animation-duration: 5s;
+        }
+
+        .f11 {
+            bottom: 1%;
+            left: 12%;
+            font-size: 2.5rem;
+            animation-delay: 0.5s;
+            animation-duration: 8s;
+        }
+
+        .f12 {
+            bottom: 2%;
+            right: 1%;
+            font-size: 3rem;
+            animation-delay: 0.7s;
+            animation-duration: 7s;
+        }
+
+        .f13 {
+            bottom: 6%;
+            right: 6%;
+            font-size: 1.8rem;
+            animation-delay: 1.8s;
+            animation-duration: 5s;
+        }
+
+        .f14 {
+            bottom: 1%;
+            right: 12%;
+            font-size: 2.5rem;
+            animation-delay: 1.2s;
+            animation-duration: 8s;
+        }
+
+        .f15 {
+            top: 45%;
+            left: 0%;
+            font-size: 2rem;
+            animation-delay: 3s;
+            animation-duration: 9s;
+        }
+
+        .f16 {
+            top: 50%;
+            right: 0%;
+            font-size: 2rem;
+            animation-delay: 1.5s;
+            animation-duration: 9s;
+        }
+
+        @keyframes floatFlower {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-15px) rotate(8deg);
+            }
+
+            66% {
+                transform: translateY(-7px) rotate(-5deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(12px);
+            border-bottom: 3px solid rgba(168, 85, 247, 0.25);
+            padding: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.1);
+        }
+
+        nav a {
+            color: #4c1d95;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            transition: all 0.25s;
+            margin: 0 4px;
+        }
+
+        nav a:hover {
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(168, 85, 247, 0.35);
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            padding: 50px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-section {
+            flex: 1;
+            position: relative;
+        }
+
+        .image-box {
+            width: 100%;
+            height: 600px;
+            border-radius: 24px;
+            border: 5px solid rgba(168, 85, 247, 0.4);
+            background: linear-gradient(135deg, #ede9fe, #dbeafe);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .content-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tag {
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            color: #fff;
+            padding: 6px 20px;
+            font-weight: 900;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            width: fit-content;
+            margin-bottom: 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 16px rgba(168, 85, 247, 0.35);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            background: linear-gradient(90deg, #f97316, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 15px 0 30px 0;
+            font-weight: 700;
+        }
+
+        .text-body {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: #374151;
+            text-align: justify;
+            margin-bottom: 40px;
+            border-left: 5px solid;
+            border-image: linear-gradient(180deg, #a855f7, #6366f1) 1;
+            padding-left: 25px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 0 16px 16px 0;
+            padding: 20px 25px;
+            backdrop-filter: blur(6px);
+        }
+
+        .footer-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-action {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+        }
+
+        .btn-action:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.55);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 36px;
+            background: linear-gradient(90deg, #1e1b4b, #312e81, #4c1d95);
+            color: #fff;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+
+        footer span {
+            font-size: 1.1rem;
+            margin: 0 6px;
+        }
+
+        @media (max-width: 1000px) {
+            .main-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .image-box {
+                height: 350px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flowers" aria-hidden="true">
+        <span class="flower f1">📐</span>
+        <span class="flower f2">🔭</span>
+        <span class="flower f3">🪐</span>
+        <span class="flower f4">🌟</span>
+        <span class="flower f5">📖</span>
+        <span class="flower f6">💡</span>
+        <span class="flower f7">📐</span>
+        <span class="flower f8">🔭</span>
+        <span class="flower f9">🪐</span>
+        <span class="flower f10">🌟</span>
+        <span class="flower f11">📖</span>
+        <span class="flower f12">💡</span>
+        <span class="flower f13">📐</span>
+        <span class="flower f14">🔭</span>
+        <span class="flower f15">🪐</span>
+        <span class="flower f16">🌟</span>
+    </div>
+
+    <nav>
+        <a href="anasayfa.html">🏠 Anasayfa</a>
+        <a href="hakkimizda.html">💡 Hakkımızda</a>
+        <a href="proje-sureci.html">🎨 Proje Süreci</a>
+    </nav>
+
+    <main class="main-container">
+        <section class="image-section">
+            <div class="image-box">
+                <img src="resimler/hypatia.jpg" alt="HYPATIA">
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="tag">BİLİM</div>
+            <h1>HYPATIA</h1>
+            <div class="subtitle">Wissenschaftliche Reise von Zahlen zu den Sternen</div>
+            <div class="text-body">
+                <strong>HYPATIA (370 – 415)</strong><br>
+                Das Licht der Wissenschaft von Alexandria, erste Mathematikerin und Astronomin<br>
+                ————————————————————————————————————————<br><br>
+                <strong>Leben und Bildung</strong><br>
+                Hypatia wurde in Alexandria geboren, einem der bedeutendsten Zentren der Wissenschaft und Kultur der
+                antiken Welt. Als Tochter des berühmten Mathematikers Theon erhielt Hypatia ihre erste Ausbildung von
+                ihrem Vater und setzte ihr Studium später in Athen und Rom fort. Nach ihrer Rückkehr in ihre Heimatstadt
+                begann sie, an der neuplatonischen Schule in der berühmten Bibliothek von Alexandria Philosophie,
+                Mathematik und Astronomie zu lehren. Hypatia, die der Lehre des Neuplatonismus folgte, gehörte der
+                mathematischen Tradition der Akademie von Athen an, die von Eudoxos angeführt wurde. Sie versuchte, die
+                Natur durch Logik, Mathematik und Experimente zu erklären.<br><br>
+                An dieser Schule vermittelte sie Schülern verschiedenster Glaubensrichtungen — darunter Christen, Heiden
+                und Juden — die Lehren von Platon und Aristoteles. Zu ihren Schülern gehörten Orestes, der spätere
+                Präfekt von Alexandria, und Synesios, der spätere Bischof von Ptolemais. Die bis heute erhaltenen
+                Quellen beschreiben sie als Symbol der Tugend, Reinheit und des Wissens.<br><br>
+                <strong>Wissenschaftliche Arbeiten</strong><br>
+                Hypatia war eines der größten Genies ihrer Zeit in den Bereichen Astronomie und Mathematik. Obwohl ihre
+                eigenen Schriften nicht direkt überliefert sind, sind ihre Beiträge zur Wissenschaft durch ihre
+                Zusammenarbeit mit ihrem Vater, Briefwechsel mit ihren Schülern und historische Berichte bekannt:<br>
+                • Ein 13-bändiger Kommentar zur Arithmetik.<br>
+                • Kommentare zu den Kegelschnitten des Apollonios.<br>
+                • Überarbeitungen von Ptolemäus' berühmtem Werk "Almagest" und Euklids "Elementen" (geschrieben von
+                ihrem Vater Theon).<br>
+                • Das Buch "The Astronomical Canon" (Die astronomischen Kanons).<br>
+                Zudem spielte sie eine wichtige Rolle bei der Entwicklung des Astrolabiums zur Klassifizierung von
+                Himmelskörpern, der Erfindung des Hydrometers zur Messung der Dichte von Flüssigkeiten und der
+                Bestimmung von Flüssigkeitsdichten.<br><br>
+                <strong>Ihr tragischer Tod</strong><br>
+                Hypatias dem Wissen gewidmetes Leben endete tragisch inmitten der politischen und religiösen Unruhen in
+                Alexandria. Aufgrund ihrer freien Ideen, ihrer Vorlesungen und ihrer Nähe zum Präfekten Orestes wurde
+                sie vom damaligen Bischof Kyrill zur Zielscheibe erklärt. Nach der Aufwiegelung der Bevölkerung wurde
+                sie im Jahr 415 von einer fanatischen Gruppe entführt, in der Caesareum-Kirche gesteinigt und ihr Körper
+                verbrannt. Der christliche Historiker Socrates Scholasticus beschreibt diese Ereignisse detailliert in
+                seinem Werk "Historia Ecclesiastica".<br><br>
+                <strong>Kulturelles Erbe</strong><br>
+                Hypatia ist in der Geschichte zu einem Symbol für Wissenschaft und freies Denken geworden. Seit dem 19.
+                Jahrhundert wurde sie in Literatur und Kunst gewürdigt, Gedichte wurden über sie geschrieben,
+                Theaterstücke aufgeführt, und ein 1884 entdeckter Asteroid wurde ihr zu Ehren "238 Hypatia" genannt. Der
+                Film "Agora" aus dem Jahr 2009 brachte das Vermächtnis dieser einzigartigen Frau der modernen Welt
+                wieder ins Bewusstsein.<br><br>
+                <strong>Kurzinfo</strong><br>
+                • <strong>Geburt / Tod:</strong> 370 – 415 n. Chr.<br>
+                • <strong>Bereich:</strong> Mathematik, Astronomie, Philosophie<br>
+                • <strong>Titel:</strong> Erste historisch dokumentierte Mathematikerin und Astronomin der
+                Geschichte<br>
+                • <strong>Wichtige Beiträge:</strong> Weiterentwicklung des Astrolabiums, Erfindung des Hydrometers,
+                Arbeiten zu Kegelschnitten<br><br>
+                <em>"Behalte das Recht zu denken, denn selbst falsch zu denken ist besser, als gar nicht zu
+                    denken."</em>
+            </div>
+
+            <div class="footer-actions">
+                <a href="hipatia_tr.html" class="btn-action">TÜRKÇEYE GEÇ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>🌸</span> © 2026 NAİP HÜSEYİN ANADOLU LİSESİ – GELECEĞİ RENKLENDİR <span>🌸</span>
+    </footer>
+
+</body>
+
+</html>
